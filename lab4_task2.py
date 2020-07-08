@@ -1,6 +1,5 @@
 import math as m
 import numpy as np
-import constant_module as cm
 
 def mult(arr):
     res=1

@@ -9,9 +9,10 @@ def avrg(arr):
     return float(s/len(arr))
 
 print("Enter array size")
-sz = float(input())
+sz = int(input())
 mass = np.zeros((sz,1))
 print("Enter array")
 for i in range (0,sz,1):
     mass[i] = (int(input()))
 print(avrg(mass))
+

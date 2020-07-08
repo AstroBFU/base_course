@@ -1,6 +1,5 @@
 import math as m
 import numpy as np
-import constant_module as cm
 
 def area(fgr):
     if fgr == "triangle":

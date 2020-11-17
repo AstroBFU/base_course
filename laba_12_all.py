@@ -18,64 +18,64 @@ t = np.arange(0, seconds_in_year, seconds_in_day)
 # define a function for a system of difequations
 
 def danya_gravition_func (z,t):
-    (x_merc, v_x_merc, y_merc, v_y_merc,
-     x_ven, v_x_ven, y_ven, v_y_ven,
-     x_ears, v_x_ears, y_ears, v_y_ears,
-     x_mars, v_x_mars, y_mars, v_y_mars,
+    (x_merc,    v_x_merc,    y_merc,    v_y_merc,
+     x_ven,     v_x_ven,     y_ven,     v_y_ven,
+     x_ears,    v_x_ears,    y_ears,    v_y_ears,
+     x_mars,    v_x_mars,    y_mars,    v_y_mars,
      x_Jupiter, v_x_Jupiter, y_Jupiter, v_y_Jupiter,
-     x_Saturn, v_x_Saturn, y_Saturn, v_y_Saturn,
+     x_Saturn,  v_x_Saturn,  y_Saturn,  v_y_Saturn,
      x_Uranus , v_x_Uranus , y_Uranus , v_y_Uranus,
      x_Neptune, v_x_Neptune, y_Neptune, v_y_Neptune
      ) = z
     
     dxdt_merc = v_x_merc
-    dv_xdt_merc = -G *sun_mass * merc_mass / (x_merc**2 +y_merc**2)**1.5
+    dv_xdt_merc = -G *sun_mass * x_merc / (x_merc**2 + y_merc**2)**1.5
     dydt_merc = v_y_merc
-    dv_ydt_merc = -G *sun_mass * merc_mass / (x_merc**2 +y_merc**2)**1.5
+    dv_ydt_merc = -G *sun_mass * y_merc / (x_merc**2 + y_merc**2)**1.5
     
     dxdt_ven = v_x_ven
-    dv_xdt_ven = -G *sun_mass * ven_mass / (x_ven**2 +y_ven**2)**1.5
+    dv_xdt_ven = -G *sun_mass * x_ven / (x_ven**2 + y_ven**2)**1.5
     dydt_ven = v_y_ven
-    dv_ydt_ven = -G *sun_mass * ven_mass / (x_ven**2 +y_ven**2)**1.5
+    dv_ydt_ven = -G *sun_mass * y_ven / (x_ven**2 + y_ven**2)**1.5
     
     dxdt_ears = v_x_ears
-    dv_xdt_ears = -G *sun_mass * ears_mass / (x_ears**2 +y_ears**2)**1.5
+    dv_xdt_ears = -G *sun_mass * x_ears / (x_ears**2 + y_ears**2)**1.5
     dydt_ears = v_y_ears
-    dv_ydt_ears = -G *sun_mass * ears_mass / (x_ears**2 +y_ears**2)**1.5
+    dv_ydt_ears = -G *sun_mass * y_ears / (x_ears**2 + y_ears**2)**1.5
     
     dxdt_mars = v_x_mars
-    dv_xdt_mars = -G *sun_mass * mars_mass / (x_mars**2 +y_mars**2)**1.5
+    dv_xdt_mars = -G *sun_mass * x_mars / (x_mars**2 + y_mars**2)**1.5
     dydt_mars = v_y_mars
-    dv_ydt_mars = -G *sun_mass * mars_mass / (x_mars**2 +y_mars**2)**1.5
+    dv_ydt_mars = -G *sun_mass * y_mars / (x_mars**2 + y_mars**2)**1.5
     
     dxdt_Jupiter = v_x_Jupiter
-    dv_xdt_Jupiter = -G *sun_mass * Jupiter_mass / (x_Jupiter**2 +y_Jupiter**2)**1.5
+    dv_xdt_Jupiter = -G *sun_mass * x_Jupiter / (x_Jupiter**2 + y_Jupiter**2)**1.5
     dydt_Jupiter = v_y_Jupiter
-    dv_ydt_Jupiter = -G *sun_mass * Jupiter_mass / (x_Jupiter**2 +y_Jupiter**2)**1.5
+    dv_ydt_Jupiter = -G *sun_mass * y_Jupiter / (x_Jupiter**2 + y_Jupiter**2)**1.5
     
     dxdt_Saturn = v_x_Saturn
-    dv_xdt_Saturn = -G *sun_mass * Saturn_mass / (x_Saturn**2 +y_Saturn**2)**1.5
+    dv_xdt_Saturn = -G *sun_mass * x_Saturn / (x_Saturn**2 + y_Saturn**2)**1.5
     dydt_Saturn = v_y_Saturn
-    dv_ydt_Saturn = -G *sun_mass * Saturn_mass / (x_Saturn**2 +y_Saturn**2)**1.5
+    dv_ydt_Saturn = -G *sun_mass * y_Saturn / (x_Saturn**2 + y_Saturn**2)**1.5
     
     dxdt_Uranus = v_x_Uranus
-    dv_xdt_Uranus = -G *sun_mass * Uranus_mass / (x_Uranus**2 +y_Uranus**2)**1.5
+    dv_xdt_Uranus = -G *sun_mass * x_Uranus / (x_Uranus**2 + y_Uranus**2)**1.5
     dydt_Uranus = v_y_Uranus
-    dv_ydt_Uranus = -G *sun_mass * Uranus_mass / (x_Uranus**2 +y_Uranus**2)**1.5
+    dv_ydt_Uranus = -G *sun_mass * y_Uranus / (x_Uranus**2 + y_Uranus**2)**1.5
     
     dxdt_Neptune = v_x_Neptune
-    dv_xdt_Neptune = -G *sun_mass * Neptune_mass / (x_Neptune**2 +y_Neptune**2)**1.5
+    dv_xdt_Neptune = -G *sun_mass * x_Neptune / (x_Neptune**2 + y_Neptune**2)**1.5
     dydt_Neptune= v_y_Neptune
-    dv_ydt_Neptune = -G *sun_mass * Neptune_mass / (x_Neptune**2 +y_Neptune**2)**1.5
+    dv_ydt_Neptune = -G *sun_mass * y_Neptune / (x_Neptune**2 + y_Neptune**2)**1.5
     
     return(
-           dxdt_merc, dv_xdt_merc, dydt_merc, dv_ydt_merc,
-           dxdt_ven, dv_xdt_ven, dydt_ven, dv_ydt_ven,
-           dxdt_ears, dv_xdt_ears, dydt_ears, dv_ydt_ears,
-           dxdt_mars, dv_xdt_mars, dydt_mars, dv_ydt_mars,
+           dxdt_merc,    dv_xdt_merc,    dydt_merc,    dv_ydt_merc,
+           dxdt_ven,     dv_xdt_ven,     dydt_ven,     dv_ydt_ven,
+           dxdt_ears,    dv_xdt_ears,    dydt_ears,    dv_ydt_ears,
+           dxdt_mars,    dv_xdt_mars,    dydt_mars,    dv_ydt_mars,
            dxdt_Jupiter, dv_xdt_Jupiter, dydt_Jupiter, dv_ydt_Jupiter,
-           dxdt_Saturn, dv_xdt_Saturn, dydt_Saturn, dv_ydt_Saturn,
-           dxdt_Uranus, dv_xdt_Uranus, dydt_Uranus, dv_ydt_Uranus,
+           dxdt_Saturn,  dv_xdt_Saturn,  dydt_Saturn,  dv_ydt_Saturn,
+           dxdt_Uranus,  dv_xdt_Uranus,  dydt_Uranus,  dv_ydt_Uranus,
            dxdt_Neptune, dv_xdt_Neptune, dydt_Neptune, dv_ydt_Neptune
            
            )
@@ -158,34 +158,33 @@ for i in range(0, len(t), 1):
     merc, = plt.plot(sol[:i,0], sol[:i,2],'r-')
     merc_line, = plt.plot(sol[i,0], sol[i,2],'ro')
     
-    ven, = plt.plot(sol[:i,4], sol[:i,6],'darkorange-')
-    ven_line, = plt.plot(sol[i,4], sol[i,6],'darkorangeo')
+    ven, = plt.plot(sol[:i,4], sol[:i,6],'-') #darkorange
+    ven_line, = plt.plot(sol[i,4], sol[i,6],'o')#darkorange
     
-    ears, = plt.plot(sol[:i,8], sol[:i,10],'greenyellow-')
-    ears_line, = plt.plot(sol[i,8], sol[i,10],'greenyellowo')
+    ears, = plt.plot(sol[:i,8], sol[:i,10],'-')#greenyellow
+    ears_line, = plt.plot(sol[i,8], sol[i,10],'o')#
     
-    mars, = plt.plot(sol[:i,12], sol[:i,14],'aqua-')
-    mars_line, = plt.plot(sol[i,12], sol[i,14],'aquao')
+    mars, = plt.plot(sol[:i,12], sol[:i,14],'-')#aqua
+    mars_line, = plt.plot(sol[i,12], sol[i,14],'o')#aqua
     
-    Jupiter, = plt.plot(sol[:i,16], sol[:i,18],'slategray-')
-    Jupiter_line, = plt.plot(sol[i,16], sol[i,18],'slategrayo')
+    Jupiter, = plt.plot(sol[:i,16], sol[:i,18],'-')#slategray
+    Jupiter_line, = plt.plot(sol[i,16], sol[i,18],'o')#slategray
     
-    Saturn, = plt.plot(sol[:i,20], sol[:i,22],'royalblue-')
-    Saturn_line, = plt.plot(sol[i,20], sol[i,22],'royalblueo')
+    Saturn, = plt.plot(sol[:i,20], sol[:i,22],'-')#royalblue
+    Saturn_line, = plt.plot(sol[i,20], sol[i,22],'o')#royalblue
     
-    Uranus, = plt.plot(sol[:i,24], sol[:i,26],'navy-')
-    Uranus_line, = plt.plot(sol[i,24], sol[i,26],'navyo')
+    Uranus, = plt.plot(sol[:i,24], sol[:i,26],'-')#navy
+    Uranus_line, = plt.plot(sol[i,24], sol[i,26],'o')#navy
     
-    Neptune, = plt.plot(sol[:i,28], sol[:i,30],'magenta-')
-    Neptune_line, = plt.plot(sol[i,28], sol[i,30],'magentao')
+    Neptune, = plt.plot(sol[:i,28], sol[:i,30],'-')#magenta
+    Neptune_line, = plt.plot(sol[i,28], sol[i,30],'o')#magenta
     
     planets.append([sun, merc, merc_line, ven, ven_line, ears, ears_line, mars, mars_line, 
 Jupiter, Jupiter_line, Saturn, Saturn_line, Uranus, Uranus_line, Neptune, Neptune_line])
     
 ani = ArtistAnimation(fig, planets,interval=50)
 plt.axis('equal')
-ani.save('laba_12_gif')
-    
+ani.save('laba_12.gif')
     
     
     

@@ -6,7 +6,7 @@ t = np.arange(0, 1000, 0.1)
 V_0 = 0
 b = 100
 k = 10
-m = 10000
+m = 200000
 F = b
 	
 def Force_function(F, t):

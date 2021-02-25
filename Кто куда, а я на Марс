@@ -1,6 +1,12 @@
 import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib.animation import FuncAnimation
+from mpl_toolkits.axisartist.axislines import Subplot
+
+'''fig = plt.figure()
+ax = Subplot(fig, 111)
+fig.add_subplot(ax)'''
+
 G = 6.67 * 10**(-11)
 M = 1.9885*10**30
 
@@ -22,11 +28,13 @@ omega_mars = 2*np.pi/T_mars
 
 # Sat
 q_sat = a_earth
-a_sat = (a_earth + a_mars)/2
+# a_sat = (a_earth + a_mars)/2
+a_sat = 199099999900
 b_sat=(a_sat**2 - (a_sat-q_sat)**2)**0.5
 c_sat = a_sat - q_sat
 T_sat = ((4*(np.pi)**2)/(G*M) * a_sat**3)**0.5
-t_fly = T_sat/2
+t_fly = T_sat/2 
+#2,23733*10**7,  B=2,36838
 omega_sat = 2*np.pi/T_sat
 
 
@@ -38,7 +46,7 @@ circle3, = plt.plot([], [], '-', color='r', label='-')
 Sun, = plt.plot([], [], 'o', color='gold', label='The Sun',ms=20)
 Mars, = plt.plot([], [], 'o', color='r', label='Mars', ms=10)
 Satellite, = plt.plot([], [], 'o', color='black', label='Satellite', ms=6)
-time_text = ax.text(0.05, 0.9, '', transform=ax.transAxes)
+
 
 def Sun_move():
   x=0
@@ -61,10 +69,12 @@ edge = 1.5*a_mars
 plt.axis('equal')
 ax.set_xlim(-edge, edge)
 ax.set_ylim(-edge, edge)
-
+'''ax.axis["right"].set_visible(False)
+ax.axis["left"].set_visible(False)
+ax.axis["bottom"].set_visible(False)
+ax.axis["top"].set_visible(False)'''
 
 def animate(i):
-  #time_text.set_text(f'days: {i}')
   Sun.set_data(Sun_move())
   Earth.set_data(object_move(omega = omega_earth,
                              t=i,
@@ -82,8 +92,8 @@ def animate(i):
                              a = a_mars,
                              b = b_mars,
                              c = c_mars,
-                             x_0 = a_mars * np.cos(3*np.pi/2),
-                             y_0 = a_mars * np.sin(3*np.pi/2)))
+                             x_0 = a_mars * np.cos(0.77),
+                             y_0 = a_mars * np.sin(0.77)))
   circle3.set_data(trajectory(a = a_sat, 
                               b = b_sat,
                               c = c_sat))
@@ -92,12 +102,11 @@ def animate(i):
                                  a = a_sat,
                                  b = b_sat,
                                  c = c_sat))
+  ax.set_title(f'Дни: {i}')
 
-if input() == '1':
-  ani = FuncAnimation(fig,
-                    animate,
-                    frames=np.linspace(0, T_earth, 500),
-                    interval=50)
+ani = FuncAnimation(fig,
+                  animate,
+                  frames=np.linspace(0, T_earth, 500),
+                  interval=50)
 
 plt.show()
-#ani.save('project.gif')

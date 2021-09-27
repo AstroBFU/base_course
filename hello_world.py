@@ -1,1 +1,3 @@
-print("Hello, world")
+import requsets
+
+r = requsets.get("")

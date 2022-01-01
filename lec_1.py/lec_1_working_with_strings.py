@@ -3,6 +3,7 @@ b='Bad'
 
 print(a + b+b)
 
+print(a)
 
 print(a * 3)
 

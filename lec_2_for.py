@@ -4,7 +4,7 @@ for i in 1, 3, 4:
 print()
 
 for i in 1, 3, 4:
-  print(i**2, end="\n")
+  print(i**2, end="n\" )
 
 for i in 1, 3, 4:
   print(i, i**2, i**3, sep=" - ")

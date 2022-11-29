@@ -1,7 +1,13 @@
-a = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-count = 0
+a = [1, 2, 3, 4, 5, 6]
+print(a)
 
 def chek(t):
-    for i in range(t):
-        
-    
+    count = 0
+    s = 0
+    for i in a:
+        s += i
+        count += 1
+    t = s / count
+    print(t)
+
+chek(a)

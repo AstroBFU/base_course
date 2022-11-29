@@ -1,0 +1,5 @@
+proton_mass = 1.673 * 10**(-27)
+electron_mass = 9.1 * 10**(-31)
+netron-mass = 1.65 * 10**(-27)
+atomnaya_edinitca_mass = 1.66 * 10**(-27)
+zaryad_electrona = 1.6 * 10**(-19)

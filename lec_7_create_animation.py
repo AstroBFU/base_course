@@ -4,12 +4,12 @@ from matplotlib.animation import FuncAnimation
 
 fig, ax = plt. subplots()
 
-anim_object, = plt.plot([], [], '-', lw=2)
+light, = plt.plot([], [], '-', lw=2)
 
 xdata, ydata = [], []
 
-ax.set_xlim(0, 2*np.pi)
-ax.set_ylim(-1, 1)
+ax.set_xlim(-6, 6)
+ax.set_ylim(-5, -1)
 
 def update(frame):
     xdata.append(frame)

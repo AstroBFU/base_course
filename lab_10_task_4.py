@@ -2,7 +2,6 @@ import numpy as np
 from scipy.integrate import odeint
 import matplotlib.pyplot as plt
 
-	
 t = np.arange(-5, 5, 0.03)
 
 def diff_func(sis, t):

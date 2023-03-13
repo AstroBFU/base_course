@@ -3,21 +3,21 @@ from scipy.integrate import odeint
 import matplotlib.pyplot as plt
 
 	
-x = np.arange (0, 5, 0.5)
+x = np.arange(-1, 1, 0.001)
 
 def diff_func(sys, x):
-    z, y = sys
+    y, z = sys
     dydx = z
-    dzdx = z ** 2 / y - 3 * y / np.sqrt(x)
-
+    dzdx = (4 * x ** 2  + 1 / 2) * y - z * x
+    
     return dydx, dzdx
 
-z0 = 0
-y0 = 1
-sys = z0, y0
+x0 = 0
+y0 = 3
+sys = x0, y0
 
 sol = odeint(diff_func, sys, x)
 
 plt.plot(x, sol[:, 1])
 
-plt.savefig('dop_task_2.png')
+plt.savefig('dop_task_4.png')

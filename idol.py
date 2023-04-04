@@ -67,7 +67,7 @@ for k in range(N-1):
 fig, ax = plt.subplots()
 
 ball_1, = plt.plot([], [], 'o', color='r', ms=25)
-ball_2, = plt.plot([], [], 'o', color='r', ms=70)
+ball_2, = plt.plot([], [], 'o', color='g', ms=70)
 
 def animate(i):
     ball_1.set_data((x1[i], 0))

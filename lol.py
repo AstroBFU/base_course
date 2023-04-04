@@ -3,19 +3,35 @@ from scipy.integrate import odeint
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
  
-# Определяем переменную величину
+def circle_plotter(radius=10):
+
+    x1 = np.arange(-2*radius, 2*radius, 0.1)
+    y1 = np.arange(-2*radius, 2*radius, 0.1)
+ 
+    X1, Y1 = np.meshgrid(x, y)
+ 
+    fxy = X1**2 + Y1**2 
+ 
+    plt.contour(X1, Y1, fxy, levels=[radius**2])
+    plt.axis('equal')
+    plt.show()
+    
+circle_plotter()
+
 frames = 365
 seconds_in_year = 365 * 24 * 60 * 60
 seconds_in_day = 24 * 60 * 60
 years = 0.5
 t = np.linspace(0, years*seconds_in_year, frames)
  
-# Определяем функцию для системы диф. уравнений
+x10 = 149 * 10**9
+v_x10 = 0
+y10 = 0
+v_y10 = 30000
+
 def move_func(s, t):
     (x2, v_x2, y2, v_y2) = s
  
-
-    # Динамика второго тела под влиянием первого
     dxdt2 = v_x2
     dv_xdt2 = (
       	    - G * m1 * (x2 - x1)
@@ -32,14 +48,6 @@ def move_func(s, t):
               )
 
     return (dxdt2, dv_xdt2, dydt2, dv_ydt2)
-
-	
-# Определяем начальные значения и параметры, 
-# входящие в систему диф. уравнений
-x10 = 149 * 10**9
-v_x10 = 0
-y10 = 0
-v_y10 = 30000
  
 x20 = - 149 * 10**9
 v_x20 = 1
@@ -57,10 +65,8 @@ q2 = 2.1 * 10**(20)
 G = 6.67 * 10**(-11)
 k = 8.98755 * 10**9
  
-# Решаем систему диф. уравнений
 sol = odeint(move_func, s0, t)
  
-# Строим решение в виде графика и анимируем
 fig, ax = plt.subplots()
  
 balls = []

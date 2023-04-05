@@ -33,14 +33,14 @@ def move_func(s, t):
     return dx1dt, dv_x1dt, dx2dt, dv_x2dt
    
 T = 10
-N = 100
+N = 200
 mass1 = 10
 mass2 = 120
 radius = 0.7
 
 x10 = 0
 x20 = 5
-v10 = 1
+v10 = 0.8
 v20 = - 0.0001
 
 x1 = [x10]

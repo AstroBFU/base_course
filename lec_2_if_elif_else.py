@@ -1,4 +1,4 @@
-a=3
+a=1
 if a>5:
     print('hello 5')
 elif a<2:

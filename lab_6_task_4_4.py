@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np 
 
 phi = np.arange(0.01, 8*np.pi, 0.1)
-r = np.sin(0.2*phi)
+r = np.sin(5*phi)
 
 x = np.cos(phi)*r
 y = np.sin(phi)*r

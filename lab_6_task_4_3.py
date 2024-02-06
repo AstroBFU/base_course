@@ -8,4 +8,5 @@ x = np.cos(phi)*r
 y = np.sin(phi)*r
 
 plt.plot(x, y)
+plt.axis('equal')
 plt.savefig('fig_lab_6_task_4_3.png')

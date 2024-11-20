@@ -1,0 +1,11 @@
+gravitational_constant = 6,67 * 10 ** -11
+speed_of_light = 3 * 10 ** 8
+avogadro_constant = 6.02214076 * 10 ** 23
+planck_constant = 6.62607015 * 10 ** 34
+first_radiation_constant = 3.741771852 * 10 ** -16
+elementary_charge = 1.602176634 * 10 ** -19
+boltzmann_constant = 1.380649 * 10 ** -23
+electron_mass = 9.1093837139 * 10 ** -31
+conductance_quantum = 7.748091729 * 10 ** -5
+molar_planck_constant = 3.9903127128934314 * 10 ** -10
+g = 9.8

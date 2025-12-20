@@ -1,0 +1,5 @@
+import matplotlib.pyplot as plt
+
+# Построение графика по точкам
+plt.plot([1, 44, 12], [1, 13, 33])
+plt.savefig('fig_1.jpg') # Сохранение графика
